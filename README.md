@@ -1,5 +1,7 @@
 <div align="center">
-  <h1>NVIDIA NIM Terminal Chat</h1>
+  <a href="https://github.com/Abdullah4152/nvidia-nim-terminal-chat">
+    <img src=".github/images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="180">
+  </a>
 </div>
 
 <div align="center">
