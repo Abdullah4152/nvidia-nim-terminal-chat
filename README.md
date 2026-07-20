@@ -1,7 +1,6 @@
-<div align="center">
-  <a href="https://github.com/Abdullah4152/nvidia-nim-terminal-chat">
-    <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="180">
-  </a>
+<div style="display: flex; align-items: center; gap: 15px;">
+  <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="80">
+  <h1 style="margin: 0;">The terminal-first client for NVIDIA NIM.</h1>
 </div>
 
 <div align="center">
