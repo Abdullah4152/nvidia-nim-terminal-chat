@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="60" align="left" style="margin-right: 15px;">
+  <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="60" align="centre" style="margin-right: 15px;">
   <b style="font-size: 24px;">The terminal-first client for NVIDIA NIM.</b>
 </p>
 
