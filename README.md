@@ -1,9 +1,19 @@
 <div align="center">
-  <img alt="NVIDIA NIM Terminal Chat logo" src="images/logo.png" width="120">
+  <a href="#">
+    <picture>
+      <img alt="NVIDIA NIM Terminal Chat logo" src="images/logo.png" width="50%">
+    </picture>
+  </a>
+</div>
+
+<div align="center">
   <h3>The terminal-first client for NVIDIA NIM.</h3>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
-  <a href="#"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
+</div>
+
+<div align="center">
+  <a href="LICENSE" target="_blank"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+  <a href="#" target="_blank"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
+  <a href="#" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
 </div>
 
 <br>
