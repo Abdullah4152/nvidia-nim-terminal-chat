@@ -1,11 +1,15 @@
-<div style="display: flex; align-items: center; gap: 15px;">
-  <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="80">
-  <h1 style="margin: 0;">The terminal-first client for NVIDIA NIM.</h1>
-</div>
+<p align="left">
+  <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="60" align="left" style="margin-right: 15px;">
+  <b style="font-size: 24px;">The terminal-first client for NVIDIA NIM.</b>
+</p>
 
-<div align="center">
-  <h3>The terminal-first client for NVIDIA NIM.</h3>
-</div>
+<p align="left">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+  <a href="#"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
+  <a href="#"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
+</p>
+
+<br>
 
 <div align="center">
   <a href="LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Abdullah4152/nvidia-nim-terminal-chat" alt="License"></a>
