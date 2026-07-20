@@ -1,7 +1,9 @@
 <div align="center">
-  <a href="#">
+  <a href="https://docs.langchain.com/oss/python/deepagents/overview#deep-agents-overview">
     <picture>
-      <img alt="NVIDIA NIM Terminal Chat logo" src="images/logo.png" width="50%">
+      <source media="(prefers-color-scheme: dark)" srcset=".github/images/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset=".github/images/logo-light.svg">
+      <img alt="Deep Agents Logo" src=".github/images/logo-dark.svg" width="50%">
     </picture>
   </a>
 </div>
@@ -11,9 +13,10 @@
 </div>
 
 <div align="center">
-  <a href="LICENSE" target="_blank"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-  <a href="#" target="_blank"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
-  <a href="#" target="_blank"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
+  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/pypi/l/deepagents" alt="PyPI - License"></a>
+  <a href="https://pypistats.org/packages/deepagents" target="_blank"><img src="https://img.shields.io/pepy/dt/deepagents" alt="PyPI - Downloads"></a>
+  <a href="https://pypi.org/project/deepagents/#history" target="_blank"><img src="https://img.shields.io/pypi/v/deepagents?label=%20" alt="Version"></a>
+  <a href="https://x.com/langchain_oss" target="_blank"><img src="https://img.shields.io/twitter/url/https/twitter.com/langchain_oss.svg?style=social&label=Follow%20%40LangChain" alt="Twitter / X"></a>
 </div>
 
 <br>
