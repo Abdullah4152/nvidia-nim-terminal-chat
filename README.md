@@ -1,25 +1,9 @@
-<table>
-  <tr>
-    <td width="70" valign="top">
-      <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="60">
-    </td>
-    <td>
-      <b style="font-size: 22px;">The terminal-first client for NVIDIA NIM.</b>
-      <br><br>
-      <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-      <a href="#"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
-      <a href="#"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
-    </td>
-  </tr>
-</table>
-
-<br>
-
 <div align="center">
-  <a href="LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Abdullah4152/nvidia-nim-terminal-chat" alt="License"></a>
-  <a href="https://github.com/Abdullah4152/nvidia-nim-terminal-chat" target="_blank"><img src="https://img.shields.io/github/stars/Abdullah4152/nvidia-nim-terminal-chat" alt="GitHub Stars"></a>
-  <img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform">
-  <img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node">
+  <img alt="NVIDIA NIM Terminal Chat logo" src="images/logo.png" width="120">
+  <h3>The terminal-first client for NVIDIA NIM.</h3>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+  <a href="#"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
+  <a href="#"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
 </div>
 
 <br>
