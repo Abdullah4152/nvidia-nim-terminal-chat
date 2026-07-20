@@ -1,6 +1,6 @@
-# NIMForge CLI
+# NVIDIA NIM Terminal Chat
 
-NIMForge CLI is a local-first terminal interface for NVIDIA NIM and other OpenAI-compatible language-model endpoints. It is designed for coding and research workflows that need a fast terminal UI, streaming responses, local workspace tools, and explicit approval before files or shell commands are changed.
+NVIDIA NIM Terminal Chat is a local-first terminal interface for NVIDIA NIM and other OpenAI-compatible language-model endpoints. It is designed for coding and research workflows that need a fast terminal UI, streaming responses, local workspace tools, and explicit approval before files or shell commands are changed.
 
 ## Highlights
 
@@ -17,8 +17,8 @@ NIMForge CLI is a local-first terminal interface for NVIDIA NIM and other OpenAI
 Requirements: Windows PowerShell and Node.js 18 or newer.
 
 ```powershell
-git clone https://github.com/Abdullah4152/nimforge-cli.git
-Set-Location nimforge-cli
+git clone https://github.com/Abdullah4152/nvidia-nim-terminal-chat.git
+Set-Location nvidia-nim-terminal-chat
 npm install
 Unblock-File .\scripts\nvidia-chat.ps1
 .\scripts\nvidia-chat.ps1
@@ -37,13 +37,13 @@ For an NVIDIA NIM model, run the launcher normally and enter an NVIDIA API key w
 Add this to your PowerShell profile if you want to run the app using `nvchat` from any folder:
 
 ```powershell
-function nvchat { & "C:\path\to\nimforge-cli\scripts\nvidia-chat.ps1" @args }
+function nvchat { & "C:\path\to\nvidia-nim-terminal-chat\scripts\nvidia-chat.ps1" @args }
 ```
 
 ## Project layout
 
 ```text
-nimforge-cli/
+nvidia-nim-terminal-chat/
 ├── src/             Main Node.js terminal application
 ├── scripts/         PowerShell launcher
 ├── docs/            Detailed user guide
@@ -53,7 +53,7 @@ nimforge-cli/
 
 ## Safety and privacy
 
-NIMForge CLI never writes files or runs a shell command without an explicit confirmation. API keys, saved chats, local memory, shell logs, and dependencies are excluded from Git through `.gitignore`.
+NVIDIA NIM Terminal Chat never writes files or runs a shell command without an explicit confirmation. API keys, saved chats, local memory, shell logs, and dependencies are excluded from Git through `.gitignore`.
 
 See [the user guide](docs/USER_GUIDE.md) for commands, keyboard controls, local mode, sessions, memory, skills, and troubleshooting.
 

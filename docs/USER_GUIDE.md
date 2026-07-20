@@ -13,7 +13,7 @@
 nvchat
 ```
 
-Enter your NVIDIA key and model ID when asked (model defaults to `meta/llama-3.3-70b-instruct` if you just press Enter). The key is passed to the app via an environment variable, never on the command line, and is never written to saved sessions.
+Enter your NVIDIA key and model ID when asked. The model prompt stays empty; pressing Enter uses `meta/llama-3.3-70b-instruct`. The key is passed to the app via an environment variable, never on the command line, and is never written to saved sessions.
 
 For a local OpenAI-compatible server (Ollama, LM Studio, vLLM):
 

@@ -1,9 +1,9 @@
 {
-  "name": "nimforge-cli",
+  "name": "nvidia-nim-terminal-chat",
   "version": "1.1.0",
   "private": false,
   "description": "A local-first terminal UI for NVIDIA NIM and OpenAI-compatible LLM endpoints",
-  "bin": { "nimforge": "src/nvchat.js" },
+  "bin": { "nvidia-nim-chat": "src/nvchat.js" },
   "engines": { "node": ">=18" },
   "dependencies": {
     "blessed": "^0.1.81"

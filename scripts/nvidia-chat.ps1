@@ -44,7 +44,7 @@ if (-not $ApiKey -and -not $Local) {
 if (-not $ApiKey) { $ApiKey = 'local' }
 
 if (-not $Model) {
-    $Model = Read-Host 'Model ID [meta/llama-3.3-70b-instruct]'
+    $Model = Read-Host 'Model ID []'
     if (-not $Model) { $Model = 'meta/llama-3.3-70b-instruct' }
 }
 
