@@ -1,0 +1,11 @@
+node_modules/
+.nvchat/
+.env
+.env.*
+*.log
+*.key
+*.pem
+profile.info
+input_box.png
+model_output_*.png
+
