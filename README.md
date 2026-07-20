@@ -1,10 +1,10 @@
-<div align="center">
-  <h3>The terminal-first client for NVIDIA NIM.</h3>
-</div>
-
 <div style="display: flex; align-items: center; gap: 15px;">
   <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="80">
   <h1 style="margin: 0;">The terminal-first client for NVIDIA NIM.</h1>
+</div>
+
+<div align="center">
+  <h3>The terminal-first client for NVIDIA NIM.</h3>
 </div>
 
 <div align="center">
