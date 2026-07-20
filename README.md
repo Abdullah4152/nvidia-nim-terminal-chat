@@ -1,13 +1,17 @@
-<p align="left">
-  <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="60" align="left" style="margin-right: 15px;">
-  <b style="font-size: 24px;">The terminal-first client for NVIDIA NIM.</b>
-</p>
-
-<p align="left">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
-  <a href="#"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
-  <a href="#"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
-</p>
+<table>
+  <tr>
+    <td width="70" valign="top">
+      <img src="images/logo.png" alt="NVIDIA NIM Terminal Chat logo" width="60">
+    </td>
+    <td>
+      <b style="font-size: 22px;">The terminal-first client for NVIDIA NIM.</b>
+      <br><br>
+      <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+      <a href="#"><img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform"></a>
+      <a href="#"><img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node"></a>
+    </td>
+  </tr>
+</table>
 
 <br>
 
