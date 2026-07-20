@@ -1,49 +1,46 @@
-# NVIDIA NIM Terminal Chat
+<div align="center">
+  <h1>NVIDIA NIM Terminal Chat</h1>
+</div>
 
-**NVIDIA NIM Terminal Chat** is a Windows terminal application for talking to NVIDIA NIM models and other OpenAI-compatible LLM servers from the folder where you are working.
+<div align="center">
+  <h3>The terminal-first client for NVIDIA NIM.</h3>
+</div>
 
-It is built for researchers and developers who want a terminal-first chat workflow: ask questions, keep sessions, inspect files in the current workspace, use local models when privacy matters, and approve any file write or shell command before it happens.
+<div align="center">
+  <a href="LICENSE" target="_blank"><img src="https://img.shields.io/github/license/Abdullah4152/nvidia-nim-terminal-chat" alt="License"></a>
+  <a href="https://github.com/Abdullah4152/nvidia-nim-terminal-chat" target="_blank"><img src="https://img.shields.io/github/stars/Abdullah4152/nvidia-nim-terminal-chat" alt="GitHub Stars"></a>
+  <img src="https://img.shields.io/badge/platform-Windows-blue" alt="Platform">
+  <img src="https://img.shields.io/badge/node-%3E%3D18-green" alt="Node">
+</div>
 
-## What it does
+<br>
 
-### Chat with cloud or local models
+NVIDIA NIM Terminal Chat is a Windows terminal application for talking to NVIDIA NIM models and other OpenAI-compatible LLM servers, run from the folder where you're working. It's built for researchers and developers who want a terminal-first workflow: ask questions, keep sessions, inspect files in the current workspace, use local models when privacy matters, and approve every file write or shell command before it happens.
 
-- Connects to NVIDIA NIM through an NVIDIA API key.
-- Also connects to local OpenAI-compatible servers such as Ollama, LM Studio, and vLLM.
-- Streams replies as they are generated instead of waiting for a whole response.
-- Lets you change the active model during a conversation with **/model**.
+**Principles:**
 
-### A terminal UI made for long technical answers
+- **Terminal-first** — streamed replies and Markdown-style rendering, no browser tab required
+- **Workspace-scoped** — file access, search, and writes stay inside the folder you launched from
+- **Approval-gated** — the model can propose a file write or a shell command, but nothing runs until you confirm it
+- **Model-agnostic** — NVIDIA NIM or any OpenAI-compatible endpoint, cloud or fully local
 
-- Rendered Markdown-style answers with headings, lists, code blocks, and red/green diffs.
-- An expandable multiline input box: paste a long prompt, review it, then send it.
-- Scroll long conversations with Up/Down, Page Up/Page Down, or the mouse wheel.
-- Press Esc to cancel a request that is queued or streaming.
+**Features include:**
 
-### Workspace-aware assistance
+- **Cloud or local models** — connect to NVIDIA NIM with an API key, or point at a local server like Ollama, LM Studio, or vLLM; switch models mid-chat with `/model`
+- **Streaming, readable output** — rendered Markdown-style answers, code blocks, and red/green diffs, typed into an expandable multiline input box
+- **Workspace tools** — attach files with `/file`, search the workspace with `/search`, and let the model propose writes or commands with `/run` behind a confirmation prompt
+- **Sub-agents** — split a task into up to three isolated sub-agent calls with `/agent`
+- **Sessions & memory** — save and resume conversations, store standing preferences with `/remember`, and compact long threads with `/summarize`
+- **Skills** — load reusable Markdown instructions from `.nvchat/skills` with `/skill`
 
-- Attach a file with **/file path/to/file**.
-- Search the current workspace with **/search text**.
-- Ask the model to create or update a file. It must propose the write, and NIM Terminal Chat asks for approval before writing.
-- Run a workspace command with **/run command** only after a confirmation prompt.
+> [!NOTE]
+> NIM Terminal Chat is a Windows PowerShell application — every command below assumes a PowerShell prompt on Windows.
 
-### Keep work across sessions
+## Quickstart
 
-- Save a conversation with **/save experiment-idea**.
-- Restore it with **/resume** and choose a saved session from the list.
-- Store small persistent facts or preferences with **/remember**.
-- Load reusable Markdown instruction files as skills from **.nvchat/skills**.
-- Summarize long conversations to reduce context pressure.
+You'll need Windows PowerShell, Node.js 18 or newer, and either an NVIDIA API key or a local OpenAI-compatible server.
 
-## Requirements
-
-- Windows PowerShell
-- Node.js 18 or newer
-- An NVIDIA API key for NVIDIA NIM, or a local OpenAI-compatible server for local mode
-
-## Install once
-
-Choose a folder where you keep development tools. The example below uses **D:\tools**; change it if you prefer another location.
+Clone the project into a folder where you keep development tools — this guide uses `D:\tools`, change it if you prefer another location — and install its dependencies:
 
 ~~~powershell
 Set-Location D:\tools
@@ -53,65 +50,48 @@ npm install
 Unblock-File .\scripts\nvidia-chat.ps1
 ~~~
 
-The launcher automatically checks for Node.js and installs the one runtime dependency on first use if needed.
-
-## Run it from any folder
-
-Add this function to your PowerShell profile one time. Replace the path if you cloned the project somewhere else.
+Register it as a command so you can launch it from any project folder:
 
 ~~~powershell
 notepad $PROFILE
 ~~~
 
-Add this line to the profile file, save it, and close Notepad:
+Add this line to the profile file (update the path if you cloned somewhere else), save, and close Notepad:
 
 ~~~powershell
 function nvchat { & "D:\tools\nvidia-nim-terminal-chat\scripts\nvidia-chat.ps1" @args }
 ~~~
 
-Load the changed profile:
+Reload the profile, then start the app from any folder — that folder becomes your workspace for `/file`, `/search`, and approved writes:
 
 ~~~powershell
 . $PROFILE
-~~~
-
-After that, you can start the app from **any folder**:
-
-~~~powershell
 PS C:\Users\abdul> nvchat
 ~~~
 
-The current folder becomes the workspace. For example, if you start it inside **D:\research\project-a**, then **/file**, **/search**, and approved file writes are limited to that project folder.
+The launcher checks for Node.js and installs its one runtime dependency the first time it runs.
 
-## Start with NVIDIA NIM
+> [!TIP]
+> Set `$env:NVIDIA_API_KEY = "nvapi-your-key-here"` before launching to skip the key prompt every session.
+
+## Usage
+
+### NVIDIA NIM
 
 ~~~powershell
 nvchat
 ~~~
 
-The launcher asks for:
+The launcher prompts for:
 
 ~~~text
 NVIDIA API key:
 Model ID []:
 ~~~
 
-Enter a model ID, such as:
+Enter a model ID, such as `meta/llama-3.3-70b-instruct`, or leave it blank to use the default model. The key is only passed through an environment variable for the running process — it's never saved in chat sessions or committed to Git.
 
-~~~text
-meta/llama-3.3-70b-instruct
-~~~
-
-You can leave Model ID empty and press Enter to use the internal default model. The API key is passed through an environment variable for the running process; it is not saved in chat sessions or committed to Git.
-
-To avoid entering the key every time, set it for your current PowerShell session:
-
-~~~powershell
-$env:NVIDIA_API_KEY = "nvapi-your-key-here"
-nvchat
-~~~
-
-## Start with a local model
+### Local models
 
 For Ollama or another local OpenAI-compatible server:
 
@@ -119,19 +99,17 @@ For Ollama or another local OpenAI-compatible server:
 nvchat -Local -Model llama3.2
 ~~~
 
-By default, local mode uses:
-
-~~~text
-http://localhost:11434/v1
-~~~
-
-Use a different compatible endpoint when needed:
+Local mode defaults to `http://localhost:11434/v1`. Point it at a different compatible endpoint when needed:
 
 ~~~powershell
 nvchat -Local -LocalUrl http://localhost:1234/v1 -Model your-model-id
 ~~~
 
-## Everyday commands
+## Commands
+
+Type `/` in the input box to open the command picker — Up/Down highlights a command, Enter or Tab completes it.
+
+### Everyday commands
 
 | Command | What it does | Example |
 | --- | --- | --- |
@@ -150,9 +128,9 @@ nvchat -Local -LocalUrl http://localhost:1234/v1 -Model your-model-id
 | **/clear** | Clears the active transcript and its chat history. | **/clear** |
 | **/exit** | Closes the application. | **/exit** |
 
-Type **/** in the input box to open the command picker. Use Up/Down to highlight a command and Enter or Tab to complete it.
+### Keyboard controls
 
-## Keyboard controls
+Scroll the transcript with Up/Down, Page Up/Page Down, or your mouse wheel.
 
 | Key | Action |
 | --- | --- |
@@ -164,14 +142,6 @@ Type **/** in the input box to open the command picker. Use Up/Down to highlight
 | Up / Down | Scroll the transcript when a menu is not open |
 | Page Up / Page Down | Scroll a full page of transcript |
 | Ctrl+C | Exit immediately |
-
-## Data, safety, and privacy
-
-- API keys are not written to session files.
-- Saved sessions, memories, skill data, tool output, and local logs live under **.nvchat/** and are ignored by Git.
-- File writes and shell commands require a confirmation step.
-- Workspace file tools reject paths outside the folder where you launched the application.
-- Local mode keeps model traffic on your local endpoint, subject to the configuration of that endpoint.
 
 ## Project layout
 
@@ -188,14 +158,51 @@ nvidia-nim-terminal-chat/
 └── LICENSE                    MIT license
 ~~~
 
-## Contributing and extending
+## Contributing
 
-The main application is in **src/nvchat.js**. The launcher is in **scripts/nvidia-chat.ps1**. The current implementation uses Node.js and the Blessed terminal library.
+The main application lives in `src/nvchat.js`; the launcher is `scripts/nvidia-chat.ps1`.
 
-Useful extensions include additional model providers, richer syntax highlighting, project-specific skills, evaluation logging, and a Python/Textual implementation for research environments that prefer Python tooling.
+Good areas to extend: additional model providers, richer syntax highlighting, project-specific skills, evaluation logging, and a Python/Textual port for research environments that prefer Python tooling.
 
-For full troubleshooting and feature notes, read [docs/USER_GUIDE.md](docs/USER_GUIDE.md).
+## FAQ
 
-## License
+### Does it work with local models?
 
-MIT. See [LICENSE](LICENSE).
+Yes — anything that speaks the OpenAI-compatible `/v1` chat completions API works, including Ollama, LM Studio, and vLLM. Launch with `-Local` (and `-LocalUrl` if your server isn't Ollama's default) instead of an NVIDIA API key.
+
+### Is my API key stored anywhere?
+
+No. It's only passed through an environment variable for the running process — never written into saved sessions and never committed to Git.
+
+### Can the model write files or run commands on its own?
+
+No. It can propose a write or a command, but nothing happens until you confirm it, and workspace tools reject any path outside the folder you launched from.
+
+### What's the difference between /save and /remember?
+
+`/save` stores the whole conversation so you can `/resume` it later. `/remember` stores one small standing preference or fact — like a coding style — that persists across every session instead of a full transcript.
+
+---
+
+## Resources
+
+- [User Guide](docs/USER_GUIDE.md) — full command reference and troubleshooting
+- [Source](src/nvchat.js) — the terminal UI and LLM client
+- [Launcher](scripts/nvidia-chat.ps1) — the Windows PowerShell entry point
+- [License](LICENSE) — MIT
+
+---
+
+## Acknowledgements
+
+Built with Node.js and the Blessed terminal UI library.
+
+## Security & Privacy
+
+Two things NIM Terminal Chat is opinionated about: the model never writes or runs anything without your approval, and workspace access never leaves the folder you launched from.
+
+- File writes and shell commands always require a confirmation step before they happen.
+- Workspace file tools reject any path outside the folder where you launched the application.
+- API keys are passed through an environment variable for the running process only — never written into session files or committed to Git.
+- Saved sessions, memories, skill data, tool output, and local logs live under `.nvchat/` and are gitignored.
+- Local mode keeps model traffic on your local endpoint, subject to that endpoint's own configuration.
